@@ -15,7 +15,7 @@ public class Complaintcontroller {
     private Complaintdao dao;
 
     @CrossOrigin(origins = "*")
-    @GetMapping(path="/userreg",consumes = "application/json",produces = "application/json")
+    @PostMapping(path="/userreg",consumes = "application/json",produces = "application/json")
     public HashMap<String,String> UserRegistration(@RequestBody Complaint c)
     {
         System.out.println(c.getName().toString());

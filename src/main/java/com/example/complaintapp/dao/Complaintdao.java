@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface Complaintdao extends CrudRepository<Complaint,Integer>
 {
-@Query(value="SELECT `id`, `address`, `email`, `name`, `password`, `phone`, `username` FROM `complaints` WHERE `username`=:username AND `password`=:password")
+@Query(value="SELECT `id`, `address`, `email`, `name`, `password`, `phone`, `username` FROM `complaints` WHERE `username`=:username AND `password`=:password",nativeQuery = true)
     List<Complaint> FindUser(@Param("username")String username,@Param("password")String password);
 
 @Query(value= "SELECT `id`, `address`, `email`, `name`, `password`, `phone`, `username` FROM `complaints` WHERE `id`=:id",nativeQuery = true)
